@@ -1241,8 +1241,9 @@ MarkerClusterer.prototype.pushMarkerTo_ = function (marker) {
  * @param {boolean} [opt_nodraw] Set to <code>true</code> to prevent redrawing.
  * @return {boolean} True if the marker was removed from the clusterer.
  */
-MarkerClusterer.prototype.removeMarker = function (marker, opt_nodraw) {
-  var removed = this.removeMarker_(marker);
+MarkerClusterer.prototype.removeMarker = function (marker, opt_nodraw, opt_noMapRemove) {
+  var removeFromMap = true && !opt_noMapRemove;
+  var removed = this.removeMarker_(marker,removeFromMap);
 
   if (!opt_nodraw && removed) {
     this.repaint();
@@ -1261,12 +1262,13 @@ MarkerClusterer.prototype.removeMarker = function (marker, opt_nodraw) {
  * @param {boolean} [opt_nodraw] Set to <code>true</code> to prevent redrawing.
  * @return {boolean} True if markers were removed from the clusterer.
  */
-MarkerClusterer.prototype.removeMarkers = function (markers, opt_nodraw) {
+MarkerClusterer.prototype.removeMarkers = function (markers, opt_nodraw, opt_noMapRemove) {
   var i, r;
   var removed = false;
+  var removeFromMap = true && !opt_noMapRemove;
 
   for (i = 0; i < markers.length; i++) {
-    r = this.removeMarker_(markers[i]);
+    r = this.removeMarker_(markers[i],removeFromMap);
     removed = removed || r;
   }
 

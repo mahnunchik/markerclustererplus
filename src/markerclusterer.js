@@ -1233,12 +1233,13 @@ MarkerClusterer.prototype.pushMarkerTo_ = function (marker) {
 
 
 /**
- * Removes a marker from the cluster.  The clusters are redrawn unless
+ * Removes a marker from the cluster and map.  The clusters are redrawn unless
  *  <code>opt_nodraw</code> is set to <code>true</code>. Returns <code>true</code> if the
  *  marker was removed from the clusterer.
  *
  * @param {google.maps.Marker} marker The marker to remove.
  * @param {boolean} [opt_nodraw] Set to <code>true</code> to prevent redrawing.
+ * @param {boolean} [opt_noMapRemove] Set to <code>true</code> to prevent removal from map but still removing from cluster management
  * @return {boolean} True if the marker was removed from the clusterer.
  */
 MarkerClusterer.prototype.removeMarker = function (marker, opt_nodraw, opt_noMapRemove) {
@@ -1254,12 +1255,13 @@ MarkerClusterer.prototype.removeMarker = function (marker, opt_nodraw, opt_noMap
 
 
 /**
- * Removes an array of markers from the cluster. The clusters are redrawn unless
+ * Removes an array of markers from the cluster and map. The clusters are redrawn unless
  *  <code>opt_nodraw</code> is set to <code>true</code>. Returns <code>true</code> if markers
  *  were removed from the clusterer.
  *
  * @param {Array.<google.maps.Marker>} markers The markers to remove.
  * @param {boolean} [opt_nodraw] Set to <code>true</code> to prevent redrawing.
+ * @param {boolean} [opt_noMapRemove] Set to <code>true</code> to prevent removal from map but still removing from cluster management
  * @return {boolean} True if markers were removed from the clusterer.
  */
 MarkerClusterer.prototype.removeMarkers = function (markers, opt_nodraw, opt_noMapRemove) {

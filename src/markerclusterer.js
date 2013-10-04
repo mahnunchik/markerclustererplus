@@ -1282,9 +1282,10 @@ MarkerClusterer.prototype.removeMarkers = function (markers, opt_nodraw) {
  * Removes a marker and returns true if removed, false if not.
  *
  * @param {google.maps.Marker} marker The marker to remove
+ * @param {boolean} removeFromMap set to <code>true</code> to explicitly remove from map as well as cluster manangement
  * @return {boolean} Whether the marker was removed or not
  */
-MarkerClusterer.prototype.removeMarker_ = function (marker) {
+MarkerClusterer.prototype.removeMarker_ = function (marker,removeFromMap) {
   var i;
   var index = -1;
   if (this.markers_.indexOf) {
@@ -1303,7 +1304,10 @@ MarkerClusterer.prototype.removeMarker_ = function (marker) {
     return false;
   }
 
-  marker.setMap(null);
+  if (removeFromMap){
+    marker.setMap(null);
+  }
+
   this.markers_.splice(index, 1); // Remove the marker from the list of managed markers
   return true;
 };

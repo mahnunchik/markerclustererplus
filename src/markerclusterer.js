@@ -1234,16 +1234,18 @@ MarkerClusterer.prototype.pushMarkerTo_ = function (marker) {
 
 
 /**
- * Removes a marker from the cluster.  The clusters are redrawn unless
+ * Removes a marker from the cluster and map.  The clusters are redrawn unless
  *  <code>opt_nodraw</code> is set to <code>true</code>. Returns <code>true</code> if the
  *  marker was removed from the clusterer.
  *
  * @param {google.maps.Marker} marker The marker to remove.
  * @param {boolean} [opt_nodraw] Set to <code>true</code> to prevent redrawing.
+ * @param {boolean} [opt_noMapRemove] Set to <code>true</code> to prevent removal from map but still removing from cluster management
  * @return {boolean} True if the marker was removed from the clusterer.
  */
-MarkerClusterer.prototype.removeMarker = function (marker, opt_nodraw) {
-  var removed = this.removeMarker_(marker);
+MarkerClusterer.prototype.removeMarker = function (marker, opt_nodraw, opt_noMapRemove) {
+  var removeFromMap = true && !opt_noMapRemove;
+  var removed = this.removeMarker_(marker,removeFromMap);
 
   if (!opt_nodraw && removed) {
     this.repaint();
@@ -1254,20 +1256,22 @@ MarkerClusterer.prototype.removeMarker = function (marker, opt_nodraw) {
 
 
 /**
- * Removes an array of markers from the cluster. The clusters are redrawn unless
+ * Removes an array of markers from the cluster and map. The clusters are redrawn unless
  *  <code>opt_nodraw</code> is set to <code>true</code>. Returns <code>true</code> if markers
  *  were removed from the clusterer.
  *
  * @param {Array.<google.maps.Marker>} markers The markers to remove.
  * @param {boolean} [opt_nodraw] Set to <code>true</code> to prevent redrawing.
+ * @param {boolean} [opt_noMapRemove] Set to <code>true</code> to prevent removal from map but still removing from cluster management
  * @return {boolean} True if markers were removed from the clusterer.
  */
-MarkerClusterer.prototype.removeMarkers = function (markers, opt_nodraw) {
+MarkerClusterer.prototype.removeMarkers = function (markers, opt_nodraw, opt_noMapRemove) {
   var i, r;
   var removed = false;
+  var removeFromMap = true && !opt_noMapRemove;
 
   for (i = 0; i < markers.length; i++) {
-    r = this.removeMarker_(markers[i]);
+    r = this.removeMarker_(markers[i],removeFromMap);
     removed = removed || r;
   }
 
@@ -1283,9 +1287,10 @@ MarkerClusterer.prototype.removeMarkers = function (markers, opt_nodraw) {
  * Removes a marker and returns true if removed, false if not.
  *
  * @param {google.maps.Marker} marker The marker to remove
+ * @param {boolean} removeFromMap set to <code>true</code> to explicitly remove from map as well as cluster manangement
  * @return {boolean} Whether the marker was removed or not
  */
-MarkerClusterer.prototype.removeMarker_ = function (marker) {
+MarkerClusterer.prototype.removeMarker_ = function (marker,removeFromMap) {
   var i;
   var index = -1;
   if (this.markers_.indexOf) {
@@ -1304,7 +1309,10 @@ MarkerClusterer.prototype.removeMarker_ = function (marker) {
     return false;
   }
 
-  marker.setMap(null);
+  if (removeFromMap){
+    marker.setMap(null);
+  }
+
   this.markers_.splice(index, 1); // Remove the marker from the list of managed markers
   return true;
 };

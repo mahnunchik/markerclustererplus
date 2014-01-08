@@ -251,9 +251,9 @@ ClusterIcon.prototype.show = function () {
     this.div_.style.cssText = this.createCss(pos);
     if (this.cluster_.printable_) {
       // (Would like to use "width: inherit;" below, but doesn't work with MSIE)
-      this.div_.innerHTML = "<img src='" + this.url_ + "'><div style='position: absolute; top: 0px; left: 0px; width: " + this.width_ + "px;'>" + this.sums_.text + "</div>";
+      this.div_.innerHTML = "<img src='" + this.url_ + "'><div style='position: absolute; top: 0px; left: 0px; width: " + this.width_ + "px;'>" + (this.cluster_.hideLabel_ ? ' ' : this.sums_.text) + "</div>";
     } else {
-      this.div_.innerHTML = this.sums_.text;
+      this.div_.innerHTML = this.cluster_.hideLabel_ ? ' ' : this.sums_.text;
     }
     if (typeof this.sums_.title === "undefined" || this.sums_.title === "") {
       this.div_.title = this.cluster_.getMarkerClusterer().getTitle();
@@ -373,6 +373,7 @@ function Cluster(mc) {
   this.minClusterSize_ = mc.getMinimumClusterSize();
   this.averageCenter_ = mc.getAverageCenter();
   this.printable_ = mc.getPrintable();
+  this.hideLabel_ = mc.getHideLabel();
   this.markers_ = [];
   this.center_ = null;
   this.bounds_ = null;
@@ -711,6 +712,10 @@ function MarkerClusterer(map, opt_markers, opt_options) {
   this.printable_ = false;
   if (opt_options.printable !== undefined) {
     this.printable_ = opt_options.printable;
+  }
+  this.hideLabel_ = false
+  if (opt_options.hideLabel !== undefined) {
+    this.hideLabel_ = opt_options.hideLabel;
   }
   this.imagePath_ = opt_options.imagePath || MarkerClusterer.IMAGE_PATH;
   this.imageExtension_ = opt_options.imageExtension || MarkerClusterer.IMAGE_EXTENSION;
@@ -1090,6 +1095,25 @@ MarkerClusterer.prototype.getPrintable = function () {
 
 
 /**
+ * Sets the value of the <code>hideLabel</code> property.
+ *
+ *  @param {boolean} printable The value of the hideLabel property.
+ */
+MarkerClusterer.prototype.setHideLabel = function (hideLabel) {
+  this.hideLabel_ = hideLabel;
+};
+
+/**
+ * Returns the value of the <code>hideLabel</code> property.
+ *
+ * @return {boolean} the value of the hideLabel property.
+ */
+MarkerClusterer.prototype.getHideLabel = function () {
+  return this.hideLabel_;
+};
+
+
+/**
  * Sets the value of the <code>printable</code> property.
  *
  *  @param {boolean} printable The value of the printable property.
@@ -1097,6 +1121,7 @@ MarkerClusterer.prototype.getPrintable = function () {
 MarkerClusterer.prototype.setPrintable = function (printable) {
   this.printable_ = printable;
 };
+
 
 
 /**

@@ -506,7 +506,6 @@ Cluster.prototype.addMarker = function (marker) {
     marker.setMap(null);
   }
 
-  this.updateIcon_();
   return true;
 };
 
@@ -1559,6 +1558,10 @@ MarkerClusterer.prototype.createClusters_ = function (iFirst) {
      * @event
      */
     google.maps.event.trigger(this, "clusteringend", this);
+
+    for (i = 0; i < this.clusters_.length; i++) {
+      this.clusters_[i].updateIcon_();
+    }
   }
 };
 

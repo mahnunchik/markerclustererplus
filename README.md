@@ -5,7 +5,12 @@ This is an enhanced version of the MarkerClusterer library for managing large am
 
 This is git version of the [google svn repo](http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclustererplus/).
 
+### Installation
+
+Install with [bower](http://bower.io).
+
+	bower install gmaps-markerclusterer-plus --save
+
 ### Additional Features
 
 * hideLabel option - removes numbers on the clusters
-* bower support - `package.json` for the bower package management system. Note that the bower package version number mirrors the version number in Google's SVN even though this repo has some exclusive modifications. 

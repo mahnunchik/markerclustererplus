@@ -5,5 +5,10 @@
   "dependencies": {
   },
   "devDependencies": {
-  }
+  },
+  "main": "src/markerclusterer.js",
+  "ignore": [
+    "docs/*",
+    "README.md"
+  ]
 }

@@ -253,6 +253,9 @@ ClusterIcon.prototype.show = function () {
       img += "clip: rect(" + (-1 * spriteV) + "px, " + ((-1 * spriteH) + this.width_) + "px, " +
           ((-1 * spriteV) + this.height_) + "px, " + (-1 * spriteH) + "px);";
     }
+    else {
+        img += "width: " + this.width_ + "px;" + "height: " + this.height_ + "px;";
+    }
     img += "'>";
     this.div_.innerHTML = img + "<div style='" +
         "position: absolute;" +
@@ -693,7 +696,7 @@ function MarkerClusterer(map, opt_markers, opt_options) {
   if (opt_options.enableRetinaIcons !== undefined) {
     this.enableRetinaIcons_ = opt_options.enableRetinaIcons;
   }
-  this.hideLabel_ = false
+  this.hideLabel_ = false;
   if (opt_options.hideLabel !== undefined) {
     this.hideLabel_ = opt_options.hideLabel;
   }
@@ -1209,7 +1212,7 @@ MarkerClusterer.prototype.addMarkers = function (markers, opt_nodraw) {
     if (markers.hasOwnProperty(key)) {
       this.pushMarkerTo_(markers[key]);
     }
-  }  
+  }
   if (!opt_nodraw) {
     this.redraw_();
   }
@@ -1665,7 +1668,7 @@ if (typeof String.prototype.trim !== 'function') {
    * @return {string} The string with removed whitespace
    */
   String.prototype.trim = function() {
-    return this.replace(/^\s+|\s+$/g, ''); 
-  }
+    return this.replace(/^\s+|\s+$/g, '');
+  };
 }
 

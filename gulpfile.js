@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 
-gulp.task('default', function() {
+//run as gulp pack from the command line (after npm installing gulp)
+gulp.task('pack', function() {
   var packer = require('packer'),
       fs = require('fs');
 
@@ -15,7 +16,6 @@ gulp.task('default', function() {
 
   fs.readFile(inFile, function(err, data) {
     if (err) return console.error(err);
-    console.log(data);
 
     var packedScript = packer.pack(data, base62, shrink);
 

@@ -7,7 +7,10 @@
     "maps"
   ],
   "scripts": {
-    "build": "uglifyjs src/markerclusterer.js --compress --output dist/markerclusterer.min.js"
+    "build": "uglifyjs src/markerclusterer.js --compress --output dist/markerclusterer.min.js",
+    "build:legacy_packaged": "uglifyjs src/markerclusterer.js --compress --output src/markerclusterer_packaged.js --preamble \"console.warn('This file has been deprecated and will be removed in the next release.');\"",
+    "build:legacy_min": "uglifyjs src/markerclusterer.js --compress --output src/markerclusterer.min.js --preamble \"console.warn('This file has been deprecated and will be removed in the next release.');\"",
+    "build:legacy": "npm run build:legacy_packaged && npm run build:legacy_min"
   },
   "dependencies": {},
   "devDependencies": {

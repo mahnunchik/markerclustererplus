@@ -1,14 +1,17 @@
 {
   "name": "markerclustererplus",
   "version": "2.1.2",
-  "keywords": ["markerclustererplus", "google", "maps"],
+  "keywords": [
+    "markerclustererplus",
+    "google",
+    "maps"
+  ],
   "dependencies": {
   },
   "devDependencies": {
   },
   "main": "src/markerclusterer.js",
   "ignore": [
-    "docs/*",
-    "README.md"
+    "docs/*"
   ]
 }

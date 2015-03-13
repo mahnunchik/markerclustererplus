@@ -1,9 +1,13 @@
 {
   "name": "markerclustererplus",
   "version": "2.1.2",
-  "keywords": ["markerclustererplus", "google", "maps"],
-  "dependencies": {
-  },
+  "keywords": [
+    "markerclustererplus",
+    "google",
+    "maps"
+  ],
+  "dependencies": {},
   "devDependencies": {
+    "uglify-js": "^2.4.17"
   }
 }

@@ -1,9 +1,18 @@
 {
   "name": "markerclustererplus",
   "version": "2.1.2",
-  "keywords": ["markerclustererplus", "google", "maps"],
-  "dependencies": {
+  "keywords": [
+    "markerclustererplus",
+    "google",
+    "maps"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mahnunchik/markerclustererplus.git"
   },
+  "dependencies": {},
   "devDependencies": {
+    "gulp": "^3.8.11",
+    "packer": ">= 0.0.5"
   }
 }

@@ -14,3 +14,12 @@ Install with [bower](http://bower.io).
 ### Additional Features
 
 * hideLabel option - removes numbers on the clusters
+
+### Build
+
+To rebuild a minified version of the library try the following commands:
+
+```
+$ npm install
+$ npm run build
+```

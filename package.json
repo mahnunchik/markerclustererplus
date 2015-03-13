@@ -6,6 +6,9 @@
     "google",
     "maps"
   ],
+  "scripts": {
+    "build": "uglifyjs src/markerclusterer.js --compress --output dist/markerclusterer.min.js"
+  },
   "dependencies": {},
   "devDependencies": {
     "uglify-js": "^2.4.17"

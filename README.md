@@ -25,7 +25,7 @@ $ npm install markerclustererplus --save
 Install with [bower](http://bower.io).
 
 ```bash 
-bower install gmaps-markerclusterer-plus --save
+bower install markerclustererplus --save
 ```
 
 ### Additional Features

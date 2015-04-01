@@ -1642,7 +1642,7 @@ MarkerClusterer.BATCH_SIZE_IE = 500;
  * @type {string}
  * @constant
  */
-MarkerClusterer.IMAGE_PATH = "//cdn.rawgit.com/mahnunchik/markerclustererplus/2.1.3/images/m";
+MarkerClusterer.IMAGE_PATH = "//cdn.rawgit.com/mahnunchik/markerclustererplus/master/images/m";
 
 
 /**

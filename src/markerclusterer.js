@@ -1672,5 +1672,6 @@ if (typeof String.prototype.trim !== 'function') {
   };
 }
 
-module.exports = MarkerClusterer;
-
+if(typeof exports === 'object') {
+    module.exports = MarkerClusterer;
+}

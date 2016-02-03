@@ -176,25 +176,25 @@ ClusterIcon.prototype.onAdd = function () {
   });
 
   google.maps.event.addDomListener(this.div_, "mouseover", function () {
-    var mc = cClusterIcon.cluster_.getMarkerClusterer();
+    var c = cClusterIcon.cluster_;
     /**
      * This event is fired when the mouse moves over a cluster marker.
      * @name MarkerClusterer#mouseover
      * @param {Cluster} c The cluster that the mouse moved over.
      * @event
      */
-    google.maps.event.trigger(mc, "mouseover", cClusterIcon.cluster_);
+    google.maps.event.trigger(c, "mouseover", cClusterIcon.cluster_);
   });
 
   google.maps.event.addDomListener(this.div_, "mouseout", function () {
-    var mc = cClusterIcon.cluster_.getMarkerClusterer();
+    var c = cClusterIcon.cluster_;
     /**
      * This event is fired when the mouse moves out of a cluster marker.
      * @name MarkerClusterer#mouseout
      * @param {Cluster} c The cluster that the mouse moved out of.
      * @event
      */
-    google.maps.event.trigger(mc, "mouseout", cClusterIcon.cluster_);
+    google.maps.event.trigger(c, "mouseout", cClusterIcon.cluster_);
   });
 };
 

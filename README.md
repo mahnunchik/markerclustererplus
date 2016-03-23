@@ -29,8 +29,8 @@ bower install markerclustererplus --save
 ```
 ### Documentation
 
-[Reference][http://htmlpreview.github.io/?https://github.com/mahnunchik/markerclustererplus/blob/master/docs/reference.html]
-[Examples][http://htmlpreview.github.io/?https://github.com/mahnunchik/markerclustererplus/blob/master/docs/examples.html]
+* [Reference](http://htmlpreview.github.io/?https://github.com/mahnunchik/markerclustererplus/blob/master/docs/reference.html)
+* [Examples](http://htmlpreview.github.io/?https://github.com/mahnunchik/markerclustererplus/blob/master/docs/examples.html)
 
 ### Additional Features
 

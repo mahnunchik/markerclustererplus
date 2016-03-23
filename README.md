@@ -27,7 +27,7 @@ Install with [bower](http://bower.io).
 ```bash 
 bower install markerclustererplus --save
 ```
-
+  		  
 ### Additional Features
 
 * hideLabel option - removes numbers on the clusters
@@ -40,6 +40,10 @@ To rebuild a minified version of the library try the following commands:
 $ npm install
 $ npm run build
 ```
+### Documentation
+
+* [Reference](http://htmlpreview.github.io/?https://github.com/mahnunchik/markerclustererplus/blob/master/docs/reference.html)
+* [Examples](http://htmlpreview.github.io/?https://github.com/mahnunchik/markerclustererplus/blob/master/docs/examples.html)
 
 ### License
 

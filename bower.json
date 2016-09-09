@@ -12,6 +12,9 @@
   },
   "main": "src/markerclusterer.js",
   "ignore": [
-    "docs/*"
+    "docs/",
+    "examples",
+    "images",
+    "src"
   ]
 }

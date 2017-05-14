@@ -1,5 +1,7 @@
 # MarkerClustererPlus
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mahnunchik/markerclustererplus.svg)](https://greenkeeper.io/)
+
 ## Warning!
 
 The following files have been deprecated and will be removed in the next release:

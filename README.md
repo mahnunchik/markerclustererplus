@@ -1,12 +1,8 @@
 # MarkerClustererPlus
 
-## Warning!
+## Not Maintained
 
-The following files have been deprecated and will be removed in the next release:
-* [src/markerclusterer.min.js](https://github.com/mahnunchik/markerclustererplus/blob/master/src/markerclusterer.min.js)
-* [src/markerclusterer_packed.js](https://github.com/mahnunchik/markerclustererplus/blob/master/src/markerclusterer_packed.js)
-
-Use [dist/markerclusterer.min.js](https://github.com/mahnunchik/markerclustererplus/blob/master/dist/markerclusterer.min.js) instead.
+Please use https://www.npmjs.com/package/@google/markerclustererplus instead.
 
 ---
 

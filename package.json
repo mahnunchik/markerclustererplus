@@ -20,6 +20,6 @@
   "license": "Apache-2.0",
   "dependencies": {},
   "devDependencies": {
-    "uglify-js": "^2.4.17"
+    "uglify-js": "^3.0.4"
   }
 }
